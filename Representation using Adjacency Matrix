@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   int v,e; 
+   cin>>v>>e;                       // Taking input no of vertices and no of edges
+   int graph[v+1][v+1]={{0,0}};     // Creating Adjacency Matrix of [V+1][V+1]
+   for(int i=0;i<e;i++)
+   {
+       int v1,v2;
+       cin>>v1>>v2;
+       graph[v1][v2]=1;             // Graph[v1][v2]=1 Implies v1 and v2 are connected
+       graph[v2][v1]=1;             //  Graph[v2][v1]=1 Implies v2 and v1 are connected (Incase of Undirected Graphs)
+   }
+   for(int i=1;i<=e;i++)
+   {
+       for(int j=1;j<=e;j++)
+       {
+           cout<<graph[i][j]<<" ";  //  Printing the Adjacency Matrix 
+       }
+       cout<<endl;
+   }
+    return 0;
+}
